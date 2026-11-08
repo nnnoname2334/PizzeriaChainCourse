@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="87dcb156ed7f4b8e8bb330d7ea44b03e" Name="Diagram1">
+        <EntityTypeShape EntityType="PizzeriaChainDBModel.Categories" Width="1.5" PointX="3.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaChainDBModel.Customers" Width="1.5" PointX="6" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaChainDBModel.Employees" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaChainDBModel.Ingredients" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaChainDBModel.MenuItemIngredients" Width="1.5" PointX="8.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaChainDBModel.MenuItemPrices" Width="1.5" PointX="8.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaChainDBModel.MenuItems" Width="1.5" PointX="6" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaChainDBModel.OrderItems" Width="1.5" PointX="10.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaChainDBModel.Orders" Width="1.5" PointX="8.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaChainDBModel.OrderStatuses" Width="1.5" PointX="6" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaChainDBModel.Pizzerias" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaChainDBModel.Positions" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaChainDBModel.Sizes" Width="1.5" PointX="6" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaChainDBModel.Stock" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="PizzeriaChainDBModel.FK__MenuItems__Categ__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaChainDBModel.FK__Orders__Customer__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaChainDBModel.FK__Employees__Pizze__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaChainDBModel.FK__Employees__Posit__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaChainDBModel.FK__Orders__Employee__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaChainDBModel.FK__MenuItemI__Ingre__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaChainDBModel.FK__Stock__Ingredien__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaChainDBModel.FK__MenuItemI__MenuI__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaChainDBModel.FK__MenuItemP__MenuI__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaChainDBModel.FK__MenuItemP__SizeI__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaChainDBModel.FK__OrderItem__MenuI__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaChainDBModel.FK__OrderItem__Order__03F0984C" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaChainDBModel.FK__Orders__Pizzeria__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaChainDBModel.FK__Orders__StatusId__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaChainDBModel.FK__Stock__PizzeriaI__71D1E811" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
