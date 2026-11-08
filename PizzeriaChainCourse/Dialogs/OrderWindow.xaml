@@ -1,0 +1,75 @@
+﻿<Window x:Class="PizzeriaChainCourse.OrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="680" Width="780" MinHeight="600" MinWidth="720"
+        WindowStartupLocation="CenterOwner" Style="{StaticResource AppWindow}">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="16"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,0,12">
+                <TextBlock Text="Пиццерия" Foreground="{StaticResource MutedBrush}"/>
+                <ComboBox x:Name="PizzeriaBox" DisplayMemberPath="Name" SelectedValuePath="PizzeriaId" Margin="0,4,0,0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="2" Margin="0,0,0,12">
+                <TextBlock Text="Клиент" Foreground="{StaticResource MutedBrush}"/>
+                <ComboBox x:Name="CustomerBox" DisplayMemberPath="Display" SelectedValuePath="CustomerId" Margin="0,4,0,0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,0,0,12">
+                <TextBlock Text="Тип заказа" Foreground="{StaticResource MutedBrush}"/>
+                <ComboBox x:Name="OrderTypeBox" Margin="0,4,0,0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="2" Margin="0,0,0,12">
+                <TextBlock Text="Статус" Foreground="{StaticResource MutedBrush}"/>
+                <ComboBox x:Name="StatusBox" DisplayMemberPath="Name" SelectedValuePath="StatusId" Margin="0,4,0,0"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Margin="0,4,0,10">
+            <TextBlock Text="Добавить позицию" FontWeight="SemiBold" Margin="0,0,0,6"/>
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="MenuPriceBox" Width="400" DisplayMemberPath="Display"/>
+                <TextBlock Text="Кол-во" Foreground="{StaticResource MutedBrush}" VerticalAlignment="Center" Margin="14,0,8,0"/>
+                <TextBox x:Name="QtyBox" Width="60" Text="1"/>
+                <Button Content="Добавить" Margin="14,0,0,0" Padding="14,6" Click="AddLine_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <DataGrid x:Name="LinesGrid" Grid.Row="2" AutoGenerateColumns="False" IsReadOnly="True"
+                  SelectionMode="Single" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Позиция" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Размер" Binding="{Binding SizeName}" Width="110"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding UnitPrice, StringFormat={}{0:N2}}" Width="90"/>
+                <DataGridTextColumn Header="Кол-во" Binding="{Binding Quantity}" Width="70"/>
+                <DataGridTextColumn Header="Сумма" Binding="{Binding Sum, StringFormat={}{0:N2}}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="3" Margin="0,14,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Button Content="Убрать позицию" Style="{StaticResource SecondaryButton}" Margin="0,0,16,0" Click="RemoveLine_Click"/>
+                <TextBlock x:Name="TotalText" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Сохранить" Width="110" Margin="0,0,8,0" IsDefault="True" Click="Save_Click"/>
+                <Button Content="Отмена" Width="90" IsCancel="True" Style="{StaticResource SecondaryButton}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

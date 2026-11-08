@@ -24,6 +24,7 @@
 
                 <StackPanel x:Name="NavPanel">
                     <Button x:Name="MenuButton" Content="Меню" Style="{StaticResource NavButton}" Click="MenuButton_Click"/>
+                    <Button x:Name="OrdersButton" Content="Заказы" Style="{StaticResource NavButton}" Click="OrdersButton_Click"/>
                 </StackPanel>
             </DockPanel>
         </Border>
