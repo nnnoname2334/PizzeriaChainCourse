@@ -73,11 +73,17 @@
     <Compile Include="Customers.cs">
       <DependentUpon>PizzeriaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\MenuItemWindow.xaml.cs">
+      <DependentUpon>MenuItemWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Employees.cs">
       <DependentUpon>PizzeriaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Ingredients.cs">
       <DependentUpon>PizzeriaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MenuItemIngredients.cs">
       <DependentUpon>PizzeriaModel.tt</DependentUpon>
@@ -97,6 +103,9 @@
     <Compile Include="OrderStatuses.cs">
       <DependentUpon>PizzeriaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PizzeriaModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -108,12 +117,21 @@
     <Compile Include="Positions.cs">
       <DependentUpon>PizzeriaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Session.cs" />
     <Compile Include="Sizes.cs">
       <DependentUpon>PizzeriaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Stock.cs">
       <DependentUpon>PizzeriaModel.tt</DependentUpon>
     </Compile>
+    <Page Include="Dialogs\MenuItemWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -126,6 +144,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\MenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PizzeriaModel.Context.cs">
@@ -186,6 +208,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
