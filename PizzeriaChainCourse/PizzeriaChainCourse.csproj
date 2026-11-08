@@ -82,6 +82,9 @@
     <Compile Include="Dialogs\OrderWindow.xaml.cs">
       <DependentUpon>OrderWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\StockWindow.xaml.cs">
+      <DependentUpon>StockWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Employees.cs">
       <DependentUpon>PizzeriaModel.tt</DependentUpon>
     </Compile>
@@ -118,6 +121,9 @@
     <Compile Include="Pages\OrdersPage.xaml.cs">
       <DependentUpon>OrdersPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\StockPage.xaml.cs">
+      <DependentUpon>StockPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PizzeriaModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -148,6 +154,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Dialogs\StockWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -173,6 +183,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\OrdersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StockPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

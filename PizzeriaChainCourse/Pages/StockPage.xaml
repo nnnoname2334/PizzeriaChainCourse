@@ -1,0 +1,59 @@
+﻿<Page x:Class="PizzeriaChainCourse.StockPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Остатки" Loaded="Page_Loaded">
+    <Grid Margin="28,24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Остатки ингредиентов" FontSize="26" FontWeight="Bold" Margin="0,0,0,16"/>
+
+        <WrapPanel Grid.Row="1" Margin="0,0,0,14">
+            <StackPanel x:Name="PizzeriaPanel" Orientation="Horizontal" Margin="0,0,16,8">
+                <TextBlock Text="Пиццерия" Foreground="{StaticResource MutedBrush}" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <ComboBox x:Name="PizzeriaFilter" Width="220" DisplayMemberPath="Name"
+                          SelectedValuePath="PizzeriaId" SelectionChanged="Filter_Changed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                <TextBlock Text="Ингредиент" Foreground="{StaticResource MutedBrush}" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <TextBox x:Name="SearchBox" Width="200" TextChanged="Filter_Changed"/>
+            </StackPanel>
+            <CheckBox x:Name="OnlyLowBox" Content="Только требующие закупки" VerticalAlignment="Center"
+                      Margin="0,0,16,8" Checked="Filter_Changed" Unchecked="Filter_Changed"/>
+            <Button Content="Сбросить" Style="{StaticResource SecondaryButton}" Margin="0,0,0,8" Click="Reset_Click"/>
+        </WrapPanel>
+
+        <DataGrid x:Name="StockGrid" Grid.Row="2" AutoGenerateColumns="False" IsReadOnly="True"
+                  SelectionMode="Single" CanUserAddRows="False" MouseDoubleClick="Grid_DoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Пиццерия" Binding="{Binding PizzeriaName}" Width="200"/>
+                <DataGridTextColumn Header="Ингредиент" Binding="{Binding IngredientName}" Width="*"/>
+                <DataGridTextColumn Header="Остаток" Binding="{Binding Quantity, StringFormat={}{0:N2}}" Width="110"/>
+                <DataGridTextColumn Header="Ед." Binding="{Binding Unit}" Width="60"/>
+                <DataGridTextColumn Header="Минимум" Binding="{Binding MinQuantity, StringFormat={}{0:N2}}" Width="110"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding StatusText}" Width="140">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding NeedsPurchase}" Value="True">
+                                    <Setter Property="Foreground" Value="#B3261E"/>
+                                    <Setter Property="FontWeight" Value="SemiBold"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,14,0,0">
+            <Button Content="Добавить" Margin="0,0,8,0" Click="Add_Click"/>
+            <Button Content="Изменить" Style="{StaticResource SecondaryButton}" Margin="0,0,8,0" Click="Edit_Click"/>
+            <Button Content="Удалить" Style="{StaticResource DangerButton}" Click="Delete_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
