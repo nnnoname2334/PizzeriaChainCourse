@@ -43,6 +43,10 @@ namespace PizzeriaChainCourse
         {
             Navigate(OrdersButton, new OrdersPage());
         }
+        private void CustomersButton_Click(object sender, RoutedEventArgs e)
+        {
+            Navigate(CustomersButton, new CustomersPage());
+        }
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
