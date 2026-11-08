@@ -208,6 +208,7 @@
 
         <Style TargetType="DataGridCell">
             <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+            <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -218,6 +219,12 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
     </Application.Resources>

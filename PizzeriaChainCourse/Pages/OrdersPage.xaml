@@ -36,7 +36,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="№" Binding="{Binding OrderId}" Width="60"/>
                 <DataGridTextColumn Header="Дата" Binding="{Binding CreatedAt, StringFormat={}{0:dd.MM.yyyy HH:mm}}" Width="140"/>
-                <DataGridTextColumn Header="Пиццерия" Binding="{Binding PizzeriaName}" Width="*"/>
+                <DataGridTextColumn Header="Пиццерия" Binding="{Binding PizzeriaName}" Width="200"/>
                 <DataGridTextColumn Header="Клиент" Binding="{Binding CustomerName}" Width="*"/>
                 <DataGridTextColumn Header="Тип" Binding="{Binding OrderType}" Width="95"/>
                 <DataGridTextColumn Header="Статус" Binding="{Binding StatusName}" Width="100"/>

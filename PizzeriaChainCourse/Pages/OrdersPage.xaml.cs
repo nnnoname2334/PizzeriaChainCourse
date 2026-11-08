@@ -84,7 +84,7 @@ namespace PizzeriaChainCourse
                         OrderId = x.OrderId,
                         CreatedAt = x.CreatedAt,
                         PizzeriaName = x.Pizzerias.Name,
-                        CustomerName = x.CustomerId == null ? "—" : x.Customers.FirstName + " (" + x.Customers.Phone + ")",
+                        CustomerName = x.CustomerId == null ? "—" : x.Customers.FirstName,
                         OrderType = x.OrderType,
                         StatusName = x.OrderStatuses.Name,
                         TotalAmount = x.TotalAmount
