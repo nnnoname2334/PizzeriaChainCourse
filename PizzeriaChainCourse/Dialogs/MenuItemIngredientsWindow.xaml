@@ -1,0 +1,40 @@
+﻿<Window x:Class="PizzeriaChainCourse.MenuItemIngredientsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Width="560" Height="540" WindowStartupLocation="CenterOwner" ResizeMode="NoResize"
+        Style="{StaticResource AppWindow}">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="TitleText" FontSize="18" FontWeight="Bold" TextWrapping="Wrap" Margin="0,0,0,12"/>
+
+        <DataGrid x:Name="CompGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True"
+                  SelectionMode="Single" CanUserAddRows="False" SelectionChanged="Grid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Ингредиент" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Количество на порцию" Binding="{Binding Quantity, StringFormat={}{0:N2}}" Width="170"/>
+                <DataGridTextColumn Header="Ед." Binding="{Binding Unit}" Width="60"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Margin="0,14,0,0">
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="IngredientBox" Width="220" DisplayMemberPath="Name" SelectedValuePath="IngredientId"
+                          SelectionChanged="IngredientBox_SelectionChanged"/>
+                <TextBox x:Name="QuantityBox" Width="100" MaxLength="12" Margin="10,0,0,0"/>
+                <TextBlock x:Name="UnitText" VerticalAlignment="Center" Margin="8,0,0,0" MinWidth="30"/>
+            </StackPanel>
+            <TextBlock Text="Выберите ингредиент и количество на одну порцию. Если ингредиент уже есть в составе, количество обновится."
+                       FontSize="12" Foreground="{StaticResource MutedBrush}" Margin="0,6,0,0" TextWrapping="Wrap"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+                <Button Content="Сохранить" Margin="0,0,8,0" Click="Save_Click"/>
+                <Button Content="Убрать из состава" Style="{StaticResource DangerButton}" Margin="0,0,8,0" Click="Delete_Click"/>
+                <Button Content="Закрыть" Style="{StaticResource SecondaryButton}" IsCancel="True"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -37,6 +37,8 @@
             <Button Content="Добавить" Margin="0,0,8,0" Click="Add_Click"/>
             <Button Content="Изменить" Style="{StaticResource SecondaryButton}" Margin="0,0,8,0" Click="Edit_Click"/>
             <Button Content="Удалить" Style="{StaticResource DangerButton}" Click="Delete_Click"/>
+            <Button Content="Цены" Style="{StaticResource SecondaryButton}" Margin="0,0,8,0" Click="Prices_Click"/>
+            <Button Content="Состав" Style="{StaticResource SecondaryButton}" Margin="0,0,16,0" Click="Composition_Click"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -13,6 +13,7 @@ namespace PizzeriaChainCourse
             if (Session.Role == "cashier") StockButton.Visibility = Visibility.Collapsed;
             if (Session.Role != "admin") EmployeesButton.Visibility = Visibility.Collapsed;
             if (Session.Role != "admin") DictionariesButton.Visibility = Visibility.Collapsed;
+            if (Session.Role != "admin") PizzeriasButton.Visibility = Visibility.Collapsed;
             UserNameText.Text = Session.FullName;
             UserRoleText.Text = RoleName(Session.Role);
             Navigate(MenuButton, new MenuPage());
@@ -61,6 +62,10 @@ namespace PizzeriaChainCourse
         private void DictionariesButton_Click(object sender, RoutedEventArgs e)
         {
             Navigate(DictionariesButton, new DictionaryPage());
+        }
+        private void PizzeriasButton_Click(object sender, RoutedEventArgs e)
+        {
+            Navigate(PizzeriasButton, new PizzeriasPage());
         }
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)

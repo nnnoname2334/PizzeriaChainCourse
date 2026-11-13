@@ -82,11 +82,20 @@
     <Compile Include="Dialogs\EmployeeWindow.xaml.cs">
       <DependentUpon>EmployeeWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\MenuItemIngredientsWindow.xaml.cs">
+      <DependentUpon>MenuItemIngredientsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\MenuItemPricesWindow.xaml.cs">
+      <DependentUpon>MenuItemPricesWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\MenuItemWindow.xaml.cs">
       <DependentUpon>MenuItemWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\OrderWindow.xaml.cs">
       <DependentUpon>OrderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PizzeriaWindow.xaml.cs">
+      <DependentUpon>PizzeriaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\StockWindow.xaml.cs">
       <DependentUpon>StockWindow.xaml</DependentUpon>
@@ -135,6 +144,9 @@
     <Compile Include="Pages\OrdersPage.xaml.cs">
       <DependentUpon>OrdersPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PizzeriasPage.xaml.cs">
+      <DependentUpon>PizzeriasPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\StockPage.xaml.cs">
       <DependentUpon>StockPage.xaml</DependentUpon>
     </Compile>
@@ -168,11 +180,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Dialogs\MenuItemIngredientsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\MenuItemPricesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dialogs\MenuItemWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dialogs\OrderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\PizzeriaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -213,6 +237,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\OrdersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PizzeriasPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -99,6 +99,27 @@ namespace PizzeriaChainCourse
             if (window.ShowDialog() == true)
                 LoadData();
         }
+        private void Prices_Click(object sender, RoutedEventArgs e)
+        {
+            var row = MenuGrid.SelectedItem as MenuRow;
+            if (row == null)
+            {
+                MessageBox.Show("Выберите позицию в таблице.", "Цены", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+            new MenuItemPricesWindow(row.MenuItemId, row.Name) { Owner = Window.GetWindow(this) }.ShowDialog();
+        }
+
+        private void Composition_Click(object sender, RoutedEventArgs e)
+        {
+            var row = MenuGrid.SelectedItem as MenuRow;
+            if (row == null)
+            {
+                MessageBox.Show("Выберите позицию в таблице.", "Состав", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+            new MenuItemIngredientsWindow(row.MenuItemId, row.Name) { Owner = Window.GetWindow(this) }.ShowDialog();
+        }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {

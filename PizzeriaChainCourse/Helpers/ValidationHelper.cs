@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace PizzeriaChainCourse
@@ -20,6 +21,14 @@ namespace PizzeriaChainCourse
             if (digits.Length == 10)
                 return "+7" + digits;
             return null;
+        }
+
+        // Разбирает число с точкой или запятой
+        public static bool TryParseAmount(string text, out decimal value)
+        {
+            string sep = CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator;
+            text = text.Trim().Replace(".", sep).Replace(",", sep);
+            return decimal.TryParse(text, NumberStyles.AllowDecimalPoint, CultureInfo.CurrentCulture, out value);
         }
     }
 }
