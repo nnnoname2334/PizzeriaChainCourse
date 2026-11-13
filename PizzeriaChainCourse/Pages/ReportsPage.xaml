@@ -1,0 +1,48 @@
+﻿<Page x:Class="PizzeriaChainCourse.ReportsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Отчёты" Loaded="Page_Loaded">
+    <Grid Margin="28,24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Отчёты" FontSize="26" FontWeight="Bold" Margin="0,0,0,16"/>
+
+        <WrapPanel Grid.Row="1" Margin="0,0,0,8">
+            <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                <TextBlock Text="Отчёт" Foreground="{StaticResource MutedBrush}" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <ComboBox x:Name="ReportBox" Width="270" DisplayMemberPath="Title" SelectedValuePath="Code"
+                          SelectionChanged="Report_Changed"/>
+            </StackPanel>
+
+            <StackPanel x:Name="PizzeriaPanel" Orientation="Horizontal" Margin="0,0,16,8">
+                <TextBlock Text="Пиццерия" Foreground="{StaticResource MutedBrush}" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <ComboBox x:Name="PizzeriaBox" Width="210" DisplayMemberPath="Name" SelectedValuePath="PizzeriaId"/>
+            </StackPanel>
+
+            <StackPanel x:Name="PeriodPanel" Orientation="Horizontal" Margin="0,0,16,8">
+                <TextBlock Text="С" Foreground="{StaticResource MutedBrush}" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <DatePicker x:Name="FromDate" Width="130"/>
+                <TextBlock Text="по" Foreground="{StaticResource MutedBrush}" VerticalAlignment="Center" Margin="10,0,8,0"/>
+                <DatePicker x:Name="ToDate" Width="130"/>
+            </StackPanel>
+
+            <StackPanel x:Name="ClientPanel" Orientation="Horizontal" Margin="0,0,16,8">
+                <TextBlock Text="Клиент" Foreground="{StaticResource MutedBrush}" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <ComboBox x:Name="ClientBox" Width="240" DisplayMemberPath="Display" SelectedValuePath="CustomerId"/>
+            </StackPanel>
+
+            <Button Content="Сформировать" Margin="0,0,8,8" Click="Build_Click"/>
+            <Button Content="Сохранить в CSV" Style="{StaticResource SecondaryButton}" Margin="0,0,0,8" Click="Export_Click"/>
+        </WrapPanel>
+
+        <TextBlock x:Name="SubtitleText" Grid.Row="2" Foreground="{StaticResource MutedBrush}" Margin="0,0,0,10" TextWrapping="Wrap"/>
+
+        <DataGrid x:Name="ResultGrid" Grid.Row="3" AutoGenerateColumns="True" ColumnWidth="*"
+                  IsReadOnly="True" SelectionMode="Single" CanUserAddRows="False"/>
+    </Grid>
+</Page>

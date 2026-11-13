@@ -30,6 +30,7 @@
                     <Button x:Name="EmployeesButton" Content="Сотрудники" Style="{StaticResource NavButton}" Click="EmployeesButton_Click"/>
                     <Button x:Name="DictionariesButton" Content="Справочники" Style="{StaticResource NavButton}" Click="DictionariesButton_Click"/>
                     <Button x:Name="PizzeriasButton" Content="Пиццерии" Style="{StaticResource NavButton}" Click="PizzeriasButton_Click"/>
+                    <Button x:Name="ReportsButton" Content="Отчёты" Style="{StaticResource NavButton}" Click="ReportsButton_Click"/>
                 </StackPanel>
             </DockPanel>
         </Border>
