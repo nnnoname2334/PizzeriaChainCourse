@@ -88,6 +88,8 @@
     <Compile Include="Employees.cs">
       <DependentUpon>PizzeriaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\PasswordHelper.cs" />
+    <Compile Include="Helpers\ValidationHelper.cs" />
     <Compile Include="Ingredients.cs">
       <DependentUpon>PizzeriaModel.tt</DependentUpon>
     </Compile>
