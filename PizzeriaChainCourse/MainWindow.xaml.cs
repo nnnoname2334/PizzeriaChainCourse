@@ -11,6 +11,7 @@ namespace PizzeriaChainCourse
         {
             InitializeComponent();
             if (Session.Role == "cashier") StockButton.Visibility = Visibility.Collapsed;
+            if (Session.Role != "admin") EmployeesButton.Visibility = Visibility.Collapsed;
             UserNameText.Text = Session.FullName;
             UserRoleText.Text = RoleName(Session.Role);
             Navigate(MenuButton, new MenuPage());
@@ -51,6 +52,10 @@ namespace PizzeriaChainCourse
         private void StockButton_Click(object sender, RoutedEventArgs e)
         {
             Navigate(StockButton, new StockPage());
+        }
+        private void EmployeesButton_Click(object sender, RoutedEventArgs e)
+        {
+            Navigate(EmployeesButton, new EmployeesPage());
         }
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)

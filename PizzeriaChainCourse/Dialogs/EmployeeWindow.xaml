@@ -1,0 +1,88 @@
+﻿<Window x:Class="PizzeriaChainCourse.EmployeeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Width="640" SizeToContent="Height" WindowStartupLocation="CenterOwner" ResizeMode="NoResize"
+        Style="{StaticResource AppWindow}">
+    <StackPanel Margin="24">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="16"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,0,12">
+                <TextBlock Text="Пиццерия" Foreground="{StaticResource MutedBrush}"/>
+                <ComboBox x:Name="PizzeriaBox" DisplayMemberPath="Name" SelectedValuePath="PizzeriaId" Margin="0,4,0,0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="2" Margin="0,0,0,12">
+                <TextBlock Text="Должность" Foreground="{StaticResource MutedBrush}"/>
+                <ComboBox x:Name="PositionBox" DisplayMemberPath="Name" SelectedValuePath="PositionId" Margin="0,4,0,0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,0,0,12">
+                <TextBlock Text="Фамилия" Foreground="{StaticResource MutedBrush}"/>
+                <TextBox x:Name="LastNameBox" MaxLength="50" Margin="0,4,0,0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="2" Margin="0,0,0,12">
+                <TextBlock Text="Имя" Foreground="{StaticResource MutedBrush}"/>
+                <TextBox x:Name="FirstNameBox" MaxLength="50" Margin="0,4,0,0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.Column="0" Margin="0,0,0,12">
+                <TextBlock Text="Отчество (необязательно)" Foreground="{StaticResource MutedBrush}"/>
+                <TextBox x:Name="MiddleNameBox" MaxLength="50" Margin="0,4,0,0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="2" Margin="0,0,0,12">
+                <TextBlock Text="Телефон" Foreground="{StaticResource MutedBrush}"/>
+                <TextBox x:Name="PhoneBox" MaxLength="20" Margin="0,4,0,0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" Grid.Column="0" Margin="0,0,0,12">
+                <TextBlock Text="Дата приёма" Foreground="{StaticResource MutedBrush}"/>
+                <DatePicker x:Name="HireDatePicker" Margin="0,4,0,0"/>
+            </StackPanel>
+        </Grid>
+
+        <Border BorderBrush="{StaticResource BorderLightBrush}" BorderThickness="0,1,0,0" Margin="0,4,0,12"/>
+
+        <CheckBox x:Name="AccessBox" Content="Разрешить вход в систему" FontWeight="SemiBold"
+                  Margin="0,0,0,12" Checked="Access_Changed" Unchecked="Access_Changed"/>
+
+        <Grid x:Name="AccessPanel" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="16"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,0,12">
+                <TextBlock Text="Логин (латиница, цифры, _)" Foreground="{StaticResource MutedBrush}"/>
+                <TextBox x:Name="LoginBox" MaxLength="50" Margin="0,4,0,0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="2" Margin="0,0,0,12">
+                <TextBlock Text="Роль" Foreground="{StaticResource MutedBrush}"/>
+                <ComboBox x:Name="RoleBox" DisplayMemberPath="Name" SelectedValuePath="Code" Margin="0,4,0,0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,0,12">
+                <TextBlock x:Name="PasswordLabel" Text="Пароль (не короче 6 символов)" Foreground="{StaticResource MutedBrush}"/>
+                <PasswordBox x:Name="PasswordInput" MaxLength="50" Margin="0,4,0,0"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,8,0,0">
+            <Button Content="Сохранить" Width="110" Margin="0,0,8,0" IsDefault="True" Click="Save_Click"/>
+            <Button Content="Отмена" Width="90" IsCancel="True" Style="{StaticResource SecondaryButton}"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
